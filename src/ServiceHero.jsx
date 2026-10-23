@@ -36,7 +36,7 @@ export default function ServiceHero({ service }) {
   ];
 
   return (
-   <section className="relative overflow-hidden pt-20 pb-12 lg:pt-12 lg:pb-20 font-sans">
+   <section className="relative w-full max-w-full overflow-hidden pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-20 font-sans">
       
 
       {/* Desktop Background */}
