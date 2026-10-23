@@ -97,7 +97,7 @@ const PricingSection = () => {
 
         {/* Card Viewport Container */}
         <div 
-          className="w-full max-w-6xl relative px-1 sm:px-0"
+          className="w-full max-w-5xl relative px-1 sm:px-0"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -113,7 +113,7 @@ const PricingSection = () => {
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.1}
               onDragEnd={handleDragEnd}
-              className={`relative w-full h-auto flex flex-col justify-center bg-white text-gray-900 rounded-[1.75rem] sm:rounded-[2.5rem] p-6 sm:p-12 lg:p-16 shadow-2xl ${
+              className={`relative w-full h-auto flex flex-col justify-center bg-white text-gray-900 rounded-[1.75rem] sm:rounded-[2.5rem] p-5 sm:p-8 lg:p-10 shadow-2xl ${
                 isHovered ? "cursor-default" : "cursor-grab active:cursor-grabbing"
               }`}
             >
@@ -244,8 +244,8 @@ function TieredPlanSlide({ slide }) {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
-      <div className="lg:col-span-8 flex flex-col space-y-4 order-2 lg:order-1">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+      <div className="lg:col-span-7 flex flex-col space-y-4 order-2 lg:order-1">
         <div className="space-y-2">
           <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black text-[#0b194f] tracking-tight leading-tight">
             {slide.title}
@@ -322,7 +322,7 @@ function TieredPlanSlide({ slide }) {
 // ---------------- Shared right-side illustration ----------------
 function IllustrationColumn({ image, alt }) {
   return (
-    <div className="lg:col-span-5 flex justify-center items-center order-1 lg:order-2 relative group w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none mx-auto">
+    <div className="lg:col-span-5 flex justify-center items-center order-1 lg:order-2 relative group w-full max-w-[260px] sm:max-w-[300px] lg:max-w-none mx-auto">
       <div className="absolute inset-0 bg-emerald-50/60 rounded-full scale-90 lg:scale-105 pointer-events-none transition-transform group-hover:scale-110 duration-500" />
       <motion.div
         className="relative z-10 w-full aspect-square flex items-center justify-center p-2"
@@ -333,7 +333,7 @@ function IllustrationColumn({ image, alt }) {
           <img
             src={image}
             alt={alt}
-            className="w-full h-auto object-contain max-h-[220px] sm:max-h-[320px] lg:max-h-[400px] pointer-events-none select-none"
+            className="w-full h-auto object-contain max-h-[200px] sm:max-h-[260px] lg:max-h-[320px] pointer-events-none select-none"
             draggable={false}
             onError={(e) => {
               e.target.style.display = "none";
