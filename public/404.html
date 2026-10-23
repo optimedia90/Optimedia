@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading Optimedia Solutions…</title>
+</head>
+<body>
+  <script>
+    // Preserve deep links when the host serves this file for unknown routes.
+    const requestedPath = location.pathname + location.search + location.hash;
+    location.replace('/?__spa_path=' + encodeURIComponent(requestedPath));
+  </script>
+  <noscript><a href="/">Open Optimedia Solutions</a></noscript>
+</body>
+</html>
