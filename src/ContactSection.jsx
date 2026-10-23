@@ -27,7 +27,7 @@ export default function ContactSection() {
   const marqueeItems = [...instagramGallery, ...instagramGallery];
 
   return (
-    <section className="relative bg-[#F4FBF7] pt-24 pb-32 overflow-hidden">
+    <section className="relative w-full max-w-full overflow-hidden bg-[#F4FBF7] pt-16 pb-24 sm:pt-24 sm:pb-32">
       
       {/* Decorative Vector Lines and Grid dots from reference image */}
       <div className="absolute top-12 left-10 grid grid-cols-4 gap-1.5 opacity-20 select-none">
@@ -37,7 +37,7 @@ export default function ContactSection() {
         {[...Array(16)].map((_, i) => <div key={i} className="w-1.5 h-1.5 rounded-full bg-slate-400" />)}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Upper Heading Meta Block */}
         <div className="text-center flex flex-col items-center">
@@ -45,7 +45,7 @@ export default function ContactSection() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#008751] font-extrabold text-xs uppercase tracking-[0.2em] mb-3 hover:opacity-80 transition-opacity"
+            className="mb-3 inline-flex max-w-full items-center justify-center gap-2 text-center text-[10px] font-extrabold uppercase tracking-[0.16em] text-[#008751] transition-opacity hover:opacity-80 sm:text-xs sm:tracking-[0.2em]"
           >
             <div className="w-4 h-4 rounded-full bg-[#E6F3FA] flex items-center justify-center text-[#008751]">
               <InstagramIcon size={10} />
@@ -57,7 +57,7 @@ export default function ContactSection() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-4xl sm:text-5xl font-black text-[#001147] tracking-tight hover:text-[#008751] transition-colors"
+            className="block w-full max-w-full break-words px-1 text-center text-[clamp(1.35rem,5.7vw,3rem)] font-black leading-[1.12] tracking-[-0.035em] text-[#001147] transition-colors hover:text-[#008751] sm:px-0"
           >
             @optimediasolustions
           </a>
@@ -73,7 +73,7 @@ export default function ContactSection() {
       </div>
 
       {/* INFINITE MARQUEE STRIP: Horizontal Auto-scrolling Slider Container */}
-      <div className="mt-14 w-full overflow-hidden relative py-4 flex select-none">
+      <div className="relative mt-10 flex w-full max-w-full select-none overflow-hidden py-4 sm:mt-14">
         {/* Tailwind Custom Animation style injected directly via style tag for effortless plugin-free running */}
         <style dangerouslySetInnerHTML={{__html: `
           @keyframes marquee {
@@ -81,21 +81,21 @@ export default function ContactSection() {
             100% { transform: translateX(-50%); }
           }
           .animate-marquee-infinite {
-            animation: marquee 25s linear infinite;
+            animation: marquee 32s linear infinite;
           }
           .animate-marquee-infinite:hover {
             animation-play-state: paused;
           }
         `}} />
 
-        <div className="flex gap-6 items-center whitespace-nowrap animate-marquee-infinite min-w-full">
+        <div className="flex w-max min-w-full items-center gap-4 whitespace-nowrap animate-marquee-infinite sm:gap-6">
           {marqueeItems.map((item, index) => (
             <a
               key={`${item.id}-${index}`}
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-[200px] sm:w-[240px] h-[280px] sm:h-[320px] rounded-[32px] overflow-hidden bg-white shadow-sm border border-slate-100 flex-shrink-0 group cursor-pointer relative block"
+              className="relative block h-[260px] w-[72vw] max-w-[260px] flex-shrink-0 cursor-pointer overflow-hidden rounded-[26px] border border-slate-100 bg-white shadow-sm group sm:h-[320px] sm:w-[240px] sm:max-w-none sm:rounded-[32px]"
             >
               <img
                 src={item.image}
