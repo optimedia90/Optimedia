@@ -1,20 +1,20 @@
-import MoneyFinancialImg from "../assets/money_financialBanking.png"
-import CreativeBranding from "../assets/The_dev_strategy.png"
-import PerformanceMarketing from "../assets/PerformanceMarketingImg.png"
+import MoneyFinancialImg from "./money_financialBanking.png"
+import CreativeBranding from "./The_dev_strategy.png"
+import PerformanceMarketing from "./PerformanceMarketingImg.png"
 
 
-import Project1 from "../assets/project1.avif";
-import Project2 from "../assets/Project2.avif";
-import Project3 from "../assets/Project3.webp";
-import Project4 from "../assets/Project4.webp";
-import Project5 from "../assets/Project5.webp";
-import Project6 from "../assets/Project6.webp";
+import Project1 from "./project1.avif";
+import Project2 from "./Project2.avif";
+import Project3 from "./Project3.webp";
+import Project4 from "./Project4.webp";
+import Project5 from "./Project5.webp";
+import Project6 from "./Project6.webp";
 
 
 
-import SmartIdea1 from "../assets/SmartIdea1.png";
-import SmartIdea4 from "../assets/SmartIdea2.png";
-import SmartIdea3 from "../assets/SmartIdea3.png";
+import SmartIdea1 from "./SmartIdea1.png";
+import SmartIdea4 from "./SmartIdea2.png";
+import SmartIdea3 from "./SmartIdea3.png";
 
 export const services = [
   {
