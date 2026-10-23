@@ -5,6 +5,7 @@ import About from "./About";
 import Contact from "./Contect";
 import ScrollToTop from "./ScrollToTop";
 import FloatingActions from "./FloatingActions";
+import LoadingScreen from "./LoadingScreen";
 import Blog from "./Blog";
 import BlogDetailPage from "./BlogDetailPage";
 import Services from "./Services";
@@ -13,6 +14,7 @@ import ServiceDetails from "./ServiceDetails";
 function App() {
   return (
     <>
+      <LoadingScreen />
       <ScrollToTop />
 
       <Routes>
