@@ -2,18 +2,18 @@ import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 
-import Navbar from ".././Navbar";
-import Footer from ".././Footer";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-import { services } from ".././MainServices";
+import { services } from "./MainServices";
 
-import ServiceHero from ".././services/ServiceHero";
-import ServiceOverview from ".././services/ServiceOverview";
-import ServiceBenefits from ".././services/ServiceBenefits";
-import ServiceProcess from ".././services/ServiceProcess";
-import ServiceFAQ from ".././services/ServiceFAQ";
-import ServiceCTA from ".././services/ServiceCTA";
-import ServiceTypes from ".././services/ServiceTypes";
+import ServiceHero from "./ServiceHero";
+import ServiceOverview from "./ServiceOverview";
+import ServiceBenefits from "./ServiceBenefits";
+import ServiceProcess from "./ServiceProcess";
+import ServiceFAQ from "./ServiceFAQ";
+import ServiceCTA from "./ServiceCTA";
+import ServiceTypes from "./ServiceTypes";
 
 
 export default function ServiceDetails() {
