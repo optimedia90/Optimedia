@@ -242,7 +242,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Optimedia Solutions. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="/privacy-policy" className="hover:text-[#001147] transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-[#001147] transition-colors">Terms of Service</a>
+            <a href="/terms-of-service" className="hover:text-[#001147] transition-colors">Terms of Service</a>
           </div>
         </div>
 
