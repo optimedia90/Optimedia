@@ -1,5 +1,5 @@
 import React from "react";
-import { instagramGallery } from "../data/servicesData";
+import { instagramGallery } from "./servicesData";
 
 const INSTAGRAM_URL = "https://www.instagram.com/optimediasolustions/";
 
