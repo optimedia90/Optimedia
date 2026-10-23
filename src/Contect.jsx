@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-import ContactHeroImg from "../assets/ContectusHeromobileImage.png";
-import ContactSection from "../components/ContactSection";
-import ContactFormSection from "../components/ContactFormSection";
+import ContactHeroImg from "./ContectusHeromobileImage.png";
+import ContactSection from "./ContactSection";
+import ContactFormSection from "./ContactFormSection";
 
 export default function Contact() {
   return (
