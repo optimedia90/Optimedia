@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 // Import data structures from servicesData
-import { digitalCampaignStats, campaignFeatures } from "../data/servicesData";
+import { digitalCampaignStats, campaignFeatures } from "./servicesData";
 // Dynamic assets binding - placeholder references for imported images
-import CampaignTeaserImg from "../assets/project1.avif"; 
+import CampaignTeaserImg from "./project1.avif"; 
 import { Link } from "react-router-dom";
 
 
