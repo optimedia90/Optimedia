@@ -5,7 +5,7 @@ import {
   BarChart3,
 } from "lucide-react";
 
-import AboutImg from "../assets/AboutImg.png"
+import AboutImg from "./AboutImg.png"
 import { useState, useEffect, useRef } from "react";
 
 export default function AboutSection() {
