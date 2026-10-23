@@ -179,37 +179,37 @@ export default function Navbar() {
   {/* Drawer */}
 
  <div
-  className={`fixed top-0 right-0 z-50 h-screen w-[320px] overflow-hidden shadow-2xl transition-transform duration-500 md:hidden ${
+  className={`fixed top-0 right-0 z-50 h-screen w-[min(88vw,390px)] overflow-hidden border-l border-white/70 shadow-[-24px_0_80px_rgba(5,8,101,0.18)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden ${
     isOpen ? "translate-x-0" : "translate-x-full"
   }`}
 >
   {/* Background Image */}
   <div
-    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
     style={{
       backgroundImage: `url(${SidebarBg})`,
     }}
   />
 
   {/* White Overlay */}
-  <div className="absolute inset-0  backdrop-blur-[2px]" />
+  <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-[#e9fbf4]/90 backdrop-blur-xl" />
 
   {/* Content */}
   <div className="relative z-10 h-full">
 
     {/* Header */}
 
-    <div className="flex items-center justify-between border-b px-6 py-5">
+    <div className="flex items-center justify-between border-b border-slate-200/80 bg-white/70 px-6 py-5 shadow-sm">
 
       <img
         src="/optimedia_logo.jpeg"
         alt="Optimedia"
-        className="h-11 w-11 rounded-full object-cover"
+        className="h-11 w-11 rounded-full object-cover ring-4 ring-white shadow-[0_4px_18px_rgba(5,8,101,0.14)]"
       />
 
       <button
         onClick={() => setIsOpen(false)}
-        className="rounded-full p-2 hover:bg-gray-100 transition"
+        aria-label="Close navigation menu" className="rounded-full border border-slate-200 bg-white/80 p-2.5 text-[#050865] shadow-sm transition duration-200 hover:bg-[#050865] hover:text-white active:scale-95"
       >
         <X size={22} />
       </button>
@@ -219,12 +219,12 @@ export default function Navbar() {
 
     {/* Links */}
 
-    <div className="h-[calc(100vh-90px)] overflow-y-auto pb-32">
+    <div className="h-[calc(100vh-100px)] overflow-y-auto px-3 pb-36 pt-3">
 
       <NavLink
         to="/"
         onClick={() => setIsOpen(false)}
-        className="block px-6 py-4 hover:bg-[#f0fdf4]"
+        className={({ isActive }) => `group flex items-center rounded-xl px-4 py-3.5 text-[15px] transition-all duration-200 ${isActive ? "bg-white text-[#050865] font-semibold shadow-sm ring-1 ring-[#050865]/5" : "text-slate-700 hover:bg-white/80 hover:text-[#008751]"}`}
       >
         Home
       </NavLink>
@@ -232,18 +232,18 @@ export default function Navbar() {
       <NavLink
         to="/about"
         onClick={() => setIsOpen(false)}
-        className="block px-6 py-4 hover:bg-[#f0fdf4]"
+        className={({ isActive }) => `group flex items-center rounded-xl px-4 py-3.5 text-[15px] transition-all duration-200 ${isActive ? "bg-white text-[#050865] font-semibold shadow-sm ring-1 ring-[#050865]/5" : "text-slate-700 hover:bg-white/80 hover:text-[#008751]"}`}
       >
         About Us
       </NavLink>
 
       {/* Services */}
 
-      <div className="border-t border-b">
+      <div className="my-1 rounded-xl border-y border-slate-200/80 py-1">
 
   <button
     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-    className="flex w-full items-center justify-between px-6 py-4 font-medium text-[#050865]"
+    className={`flex w-full items-center justify-between rounded-xl px-4 py-3.5 text-[15px] font-semibold transition-all duration-200 ${mobileServicesOpen ? "bg-white text-[#050865] shadow-sm ring-1 ring-[#050865]/5" : "text-slate-800 hover:bg-white/80"}`}
   >
     <span>Services</span>
 
@@ -260,7 +260,7 @@ export default function Navbar() {
       mobileServicesOpen ? "max-h-[700px]" : "max-h-0"
     }`}
   >
-    <div className="px-2 pb-4">
+    <div className="mx-2 mb-2 rounded-xl border-l-2 border-emerald-400/70 bg-white/55 px-2 pb-2 pt-1">
 
       {services.map((service) => (
         <NavLink
@@ -271,7 +271,7 @@ export default function Navbar() {
             setMobileServicesOpen(false);
             setServicesOpen(false);
           }}
-          className="block rounded-xl px-4 py-3 text-slate-700 transition hover:bg-[#f0fdf4] hover:text-[#008751]"
+          className={({ isActive }) => `block rounded-lg px-4 py-3 text-sm transition-all duration-200 ${isActive ? "bg-emerald-50 font-semibold text-[#008751]" : "text-slate-600 hover:bg-white hover:text-[#008751]"}`}
         >
           {service.title}
         </NavLink>
@@ -285,7 +285,7 @@ export default function Navbar() {
       <NavLink
         to="/blog"
         onClick={() => setIsOpen(false)}
-        className="block px-6 py-4 hover:bg-[#f0fdf4]"
+        className={({ isActive }) => `block rounded-xl px-4 py-3.5 text-[15px] transition-all duration-200 ${isActive ? "bg-white text-[#050865] font-semibold shadow-sm ring-1 ring-[#050865]/5" : "text-slate-700 hover:bg-white/80 hover:text-[#008751]"}`}
       >
         Blog
       </NavLink>
@@ -293,7 +293,7 @@ export default function Navbar() {
       <NavLink
         to="/contect"
         onClick={() => setIsOpen(false)}
-        className="block px-6 py-4 hover:bg-[#f0fdf4]"
+        className={({ isActive }) => `block rounded-xl px-4 py-3.5 text-[15px] transition-all duration-200 ${isActive ? "bg-white text-[#050865] font-semibold shadow-sm ring-1 ring-[#050865]/5" : "text-slate-700 hover:bg-white/80 hover:text-[#008751]"}`}
       >
         Contact Us
       </NavLink>
@@ -302,11 +302,11 @@ export default function Navbar() {
 
        {/* Bottom Button */}
 
-    <div className="absolute bottom-6 left-6 right-6">
+    <div className="absolute bottom-0 left-0 right-0 border-t border-white/80 bg-white/75 p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] backdrop-blur-xl">
       <Link
         to="/contect#contact-form"
         onClick={() => setIsOpen(false)}
-        className="flex items-center justify-center gap-2 rounded-full bg-[#050865] px-6 py-4 text-white transition hover:bg-[#008751]"
+        className="group flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#050865] to-[#111a83] px-6 py-4 font-semibold text-white shadow-[0_10px_25px_rgba(5,8,101,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(5,8,101,0.28)] active:scale-[0.98]"
       >
         Get Quote
         <ArrowRight size={18} />
