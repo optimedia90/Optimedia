@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import BGImage from "../assets/BackgroundImg.png"
+import BGImage from "./BackgroundImg.png"
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -8,7 +8,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { projects } from "../data/servicesData";
+import { projects } from "./servicesData";
 import ProjectCard from "./ProjectCard";
 
 export default function ProjectsSection() {
