@@ -1,8 +1,6 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
-import BlogHero from "./blogHeroImg.png"; // apni image ka naam
-
+import BlogHero from "./blogHeroImg.png";
 import BlogSection from "./BlogSection";
 import ContactSection from "./ContactSection";
 
@@ -11,43 +9,29 @@ export default function Blog() {
     <>
       <Navbar />
 
-      {/* ================= Hero Section ================= */}
+      {/* Blog hero: preserve the full artwork without cropping its text. */}
+      <section
+        aria-label="Optimedia blog introduction"
+        className="relative isolate flex w-full items-center justify-center overflow-hidden bg-[#f0fdf4] px-0"
+      >
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_72%_45%,rgba(16,185,129,0.10),transparent_52%)]" />
 
-      <section className="relative overflow-hidden">
-        {/* Desktop */}
         <img
           src={BlogHero}
-          alt="Blog Hero"
-          className="hidden md:block w-full object-cover"
+          alt="Optimedia blog — insights, ideas, and digital marketing growth"
+          fetchPriority="high"
+          decoding="async"
+          className="block h-auto w-full max-w-[1920px] object-contain object-center
+                     max-h-[calc(100svh-80px)]
+                     sm:max-h-[calc(100svh-88px)]
+                     lg:max-h-[min(820px,calc(100svh-88px))]"
         />
-
-        {/* Mobile */}
-        <img
-          src={BlogHero}
-          alt="Blog Hero"
-          className="block md:hidden w-full object-cover object-center"
-        />
-
-        {/* Bottom Curve */}
-
-        <svg
-          className="absolute bottom-0 left-0 w-full"
-          viewBox="0 0 1440 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            fill="#f0fdf4"
-            d="M0,80 C300,140 900,20 1440,90 L1440,120 L0,120 Z"
-          />
-        </svg>
       </section>
 
-      {/* ================= Latest Blogs ================= */}
-
+      {/* Latest articles */}
       <BlogSection />
 
-      {/* ================= Contact CTA ================= */}
-
+      {/* Contact CTA */}
       <ContactSection />
 
       <Footer />
