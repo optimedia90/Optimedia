@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
-import { smartIdeas } from "../data/servicesData";
+import { smartIdeas } from "./servicesData";
 import { Link } from "react-router-dom";
 
 export default function SmartIdeasSection() {
