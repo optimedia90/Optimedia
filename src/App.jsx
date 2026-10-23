@@ -10,6 +10,7 @@ import Blog from "./Blog";
 import BlogDetailPage from "./BlogDetailPage";
 import Services from "./Services";
 import ServiceDetails from "./ServiceDetails";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogDetailPage />} />
         <Route path="/services" element={<Services />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         <Route
           path="*"
