@@ -1,17 +1,17 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-import AboutheroImg from "../assets/aboutUsHeroImg.png";
-import AboutheroImgMobile from "../assets/mobileAboutHeroImg.png";
-import AboutSection from "../components/AboutSection";
-import WhyChooseUsSection from "../components/WhyChooseUsSection";
-import TeamSection from "../components/TeamSection";
-import SmartIdeasSection from "../components/SmartIdeasSection";
-import ProjectsSection from "../components/ProjectsSection";
-import BlogSection from "../components/BlogSection";
+import AboutheroImg from "./aboutUsHeroImg.png";
+import AboutheroImgMobile from "./mobileAboutHeroImg.png";
+import AboutSection from "./AboutSection";
+import WhyChooseUsSection from "./WhyChooseUsSection";
+import TeamSection from "./TeamSection";
+import SmartIdeasSection from "./SmartIdeasSection";
+import ProjectsSection from "./ProjectsSection";
+import BlogSection from "./BlogSection";
 
 export default function About() {
   return (
