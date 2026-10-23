@@ -4,6 +4,34 @@ import { Check, ArrowRight } from "lucide-react";
 import { smartIdeas } from "./servicesData";
 import { Link } from "react-router-dom";
 
+function TypewriterText({ text, speed = 38, delay = 0, className = "" }) {
+  const [visibleText, setVisibleText] = useState("");
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisibleText(text);
+      return;
+    }
+
+    let index = 0;
+    let interval;
+    const timeout = window.setTimeout(() => {
+      interval = window.setInterval(() => {
+        index += 1;
+        setVisibleText(text.slice(0, index));
+        if (index >= text.length) window.clearInterval(interval);
+      }, speed);
+    }, delay);
+
+    return () => {
+      window.clearTimeout(timeout);
+      window.clearInterval(interval);
+    };
+  }, [text, speed, delay]);
+
+  return <span className={className}>{visibleText}</span>;
+}
+
 export default function SmartIdeasSection() {
   const [typedTitle, setTypedTitle] = useState("");
   const fullTitle = "Generate Smart Ideas For Your Business";
@@ -16,13 +44,19 @@ export default function SmartIdeasSection() {
     }
 
     let index = 0;
-    const timer = window.setInterval(() => {
-      index += 1;
-      setTypedTitle(fullTitle.slice(0, index));
-      if (index >= fullTitle.length) window.clearInterval(timer);
-    }, 65);
+    let frame;
+    let lastTime = 0;
+    const typeNext = (time) => {
+      if (!lastTime || time - lastTime >= 48) {
+        index += 1;
+        setTypedTitle(fullTitle.slice(0, index));
+        lastTime = time;
+      }
+      if (index < fullTitle.length) frame = window.requestAnimationFrame(typeNext);
+    };
+    frame = window.requestAnimationFrame(typeNext);
 
-    return () => window.clearInterval(timer);
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   // Container animation configuration for staggered entry
@@ -118,12 +152,12 @@ export default function SmartIdeasSection() {
                   />
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#050865] tracking-tight mb-4 transition-colors duration-300">
-                  {card.title}
+                <h3 className="text-2xl font-bold text-[#050865] tracking-tight mb-4 transition-colors duration-300 min-h-[1.3em]">
+                  <TypewriterText text={card.title} speed={42} delay={350 + smartIdeas.findIndex((item) => item.id === card.id) * 450} />
                 </h3>
 
-                <p className="text-gray-500 text-base leading-relaxed mb-6">
-                  {card.description}
+                <p className="text-gray-500 text-base leading-relaxed mb-6 min-h-[4.5em]">
+                  <TypewriterText text={card.description} speed={16} delay={800 + smartIdeas.findIndex((item) => item.id === card.id) * 450} />
                 </p>
 
                 <div className="w-full h-[1px] bg-slate-100 my-6" />
