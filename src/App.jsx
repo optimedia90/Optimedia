@@ -4,6 +4,7 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contect";
 import ScrollToTop from "./ScrollToTop";
+import FloatingActions from "./FloatingActions";
 import Blog from "./Blog";
 import BlogDetailPage from "./BlogDetailPage";
 import Services from "./Services";
@@ -16,21 +17,12 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/about" element={<About />} />
-
         <Route path="/contect" element={<Contact />} />
-
         <Route path="/blog" element={<Blog />} />
-
         <Route path="/blog/:slug" element={<BlogDetailPage />} />
-
         <Route path="/services" element={<Services />} />
-
-        <Route
-          path="/services/:slug"
-          element={<ServiceDetails />}
-        />
+        <Route path="/services/:slug" element={<ServiceDetails />} />
 
         <Route
           path="*"
@@ -56,6 +48,8 @@ function App() {
           }
         />
       </Routes>
+
+      <FloatingActions />
     </>
   );
 }
