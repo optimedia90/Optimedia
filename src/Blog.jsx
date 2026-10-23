@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-import BlogHero from "../assets/blogHeroImg.png"; // apni image ka naam
+import BlogHero from "./blogHeroImg.png"; // apni image ka naam
 
-import BlogSection from "../components/BlogSection";
-import ContactSection from "../components/ContactSection";
+import BlogSection from "./BlogSection";
+import ContactSection from "./ContactSection";
 
 export default function Blog() {
   return (
