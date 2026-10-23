@@ -2,20 +2,20 @@
 // Service Hero Images
 // ===============================
 
-import SeoHero from "../assets/SeoHeroImg.png";
-import SeoBg from "../assets/BgImageForOptimedia.png";
-import WebsiteBg from "../assets/webServicesHeroImg.png";
-import WebsiteMobileBg from "../assets/webHeroMobileImg.png";
-import SemBg from "../assets/SEM_bgImg.png";
-import MobileHero from "../assets/mobileHeroBgForServices.png";
-import SmmBg from "../assets/social_media_marketing.png";
-import ContentBg from "../assets/contenctBg.png";
-import EmailBg from "../assets/eamilHeroBg.png";
-import AffiliateBg from "../assets/Affiliate_Marketing_heroBg.png";
-import AnalyticsBg from "../assets/Web_AnalyticsHeroBg.png";
-import OrmBg from "../assets/Reputation_Management_hero_bg.png";
-import VideoBg from "../assets/Video_Marketing_hero_bg.png";
-import EcommerceBg from "../assets/E-commerce-Marketing-hero-bg.png";
+import SeoHero from "./SeoHeroImg.png";
+import SeoBg from "./BgImageForOptimedia.png";
+import WebsiteBg from "./webServicesHeroImg.png";
+import WebsiteMobileBg from "./webHeroMobileImg.png";
+import SemBg from "./SEM_bgImg.png";
+import MobileHero from "./mobileHeroBgForServices.png";
+import SmmBg from "./social_media_marketing.png";
+import ContentBg from "./contenctBg.png";
+import EmailBg from "./eamilHeroBg.png";
+import AffiliateBg from "./Affiliate_Marketing_heroBg.png";
+import AnalyticsBg from "./Web_AnalyticsHeroBg.png";
+import OrmBg from "./Reputation_Management_hero_bg.png";
+import VideoBg from "./Video_Marketing_hero_bg.png";
+import EcommerceBg from "./E-commerce-Marketing-hero-bg.png";
 
 export const services = [
   {
