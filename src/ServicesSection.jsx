@@ -7,7 +7,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { services } from "../data/servicesData";
+import { services } from "./servicesData";
 
 export default function ServicesSection() {
   const swiperRef = useRef(null);
