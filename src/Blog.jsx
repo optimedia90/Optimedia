@@ -21,10 +21,7 @@ export default function Blog() {
           alt="Optimedia blog — insights, ideas, and digital marketing growth"
           fetchPriority="high"
           decoding="async"
-          className="block h-auto w-full max-w-[1920px] object-contain object-center
-                     max-h-[min(460px,calc(100svh-120px))]
-                     sm:max-h-[min(500px,calc(100svh-120px))]
-                     lg:max-h-[min(480px,calc(100svh-120px))]"
+          className="block h-auto w-full max-w-[1100px] object-contain object-center"
         />
       </section>
 
