@@ -241,7 +241,7 @@ export default function Footer() {
         <div className="mt-16 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-bold text-slate-400/90 tracking-wide">
           <p>© {new Date().getFullYear()} Optimedia Solutions. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-[#001147] transition-colors">Privacy Policy</a>
+            <a href="/privacy-policy" className="hover:text-[#001147] transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-[#001147] transition-colors">Terms of Service</a>
           </div>
         </div>
