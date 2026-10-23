@@ -2,9 +2,9 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, ArrowRight, Star, Award, Crown, ChevronLeft, ChevronRight } from "lucide-react";
-import { pricingSlides } from "../data/pricingSlidesData";
-import DesktopBgImage from "../assets/pricingBgImg.png";
-import MobileBgImage from "../assets/pricingMobileBgimg.png";
+import { pricingSlides } from "./pricingSlidesData";
+import DesktopBgImage from "./pricingBgImg.png";
+import MobileBgImage from "./pricingMobileBgimg.png";
 
 const AUTOPLAY_DELAY = 6000;
 
