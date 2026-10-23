@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
-import heroimg from "../assets/HeroImg.png"
-import MouseParallax from "../components/MouseParallax";
+import heroimg from "./HeroImg.png"
+import MouseParallax from "./MouseParallax";
 import { Link } from "react-router-dom";
 
 export default function HeroSection() {
