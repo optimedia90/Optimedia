@@ -16,12 +16,17 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/about" element={<About />} />
+
         <Route path="/contect" element={<Contact />} />
+
         <Route path="/blog" element={<Blog />} />
+
         <Route path="/blog/:slug" element={<BlogDetailPage />} />
 
         <Route path="/services" element={<Services />} />
+
         <Route
           path="/services/:slug"
           element={<ServiceDetails />}
