@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 // Importing the blog data from the single-source blogsData file
-import { blogPostsData } from "../data/blogsData";
+import { blogPostsData } from "./blogsData";
 
 export default function BlogSection() {
   const fadeInUp = {
