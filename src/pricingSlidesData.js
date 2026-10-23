@@ -1,7 +1,7 @@
 // data/pricingSlidesData.js
 // Add your own illustration images in src/assets and update the imports below.
-import socialMediaImg from "../assets/SMM_Service.png";
-import webDevImg from "../assets/webserviceplan.png";
+import socialMediaImg from "./SMM_Service.png";
+import webDevImg from "./webserviceplan.png";
 
 export const pricingSlides = [
   {
