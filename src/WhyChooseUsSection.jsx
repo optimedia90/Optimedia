@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Code2, PenTool, UserCheck } from "lucide-react";
-import { whyChooseUsFeatures } from "../data/servicesData";
+import { whyChooseUsFeatures } from "./servicesData";
 import { Link } from "react-router-dom";
 
 // Dynamic images setup
-import FeatureImgForeground from "../assets/Project2.avif"; 
-import FeatureImgBackground from "../assets/Project3.webp"; 
+import FeatureImgForeground from "./Project2.avif"; 
+import FeatureImgBackground from "./Project3.webp"; 
 
 export default function WhyChooseUsSection() {
   
