@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import { getBlogBySlug } from "../data/blogsData";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { blogsData } from "./blogsData";
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
