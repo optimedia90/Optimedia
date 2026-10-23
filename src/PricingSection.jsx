@@ -97,7 +97,7 @@ const PricingSection = () => {
 
         {/* Card Viewport Container */}
         <div 
-          className="w-full max-w-5xl relative px-1 sm:px-0"
+          className="w-full max-w-6xl relative px-1 sm:px-0"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -113,7 +113,7 @@ const PricingSection = () => {
               dragConstraints={{ left: 0, right: 0 }}
               dragElastic={0.1}
               onDragEnd={handleDragEnd}
-              className={`relative w-full h-auto flex flex-col justify-center bg-white text-gray-900 rounded-[1.75rem] sm:rounded-[2.5rem] p-5 sm:p-10 lg:p-14 shadow-2xl ${
+              className={`relative w-full h-auto flex flex-col justify-center bg-white text-gray-900 rounded-[1.75rem] sm:rounded-[2.5rem] p-6 sm:p-12 lg:p-16 shadow-2xl ${
                 isHovered ? "cursor-default" : "cursor-grab active:cursor-grabbing"
               }`}
             >
@@ -322,14 +322,18 @@ function TieredPlanSlide({ slide }) {
 // ---------------- Shared right-side illustration ----------------
 function IllustrationColumn({ image, alt }) {
   return (
-    <div className="lg:col-span-4 flex justify-center items-center order-1 lg:order-2 relative group w-full max-w-[240px] sm:max-w-[280px] lg:max-w-none mx-auto">
+    <div className="lg:col-span-5 flex justify-center items-center order-1 lg:order-2 relative group w-full max-w-[300px] sm:max-w-[360px] lg:max-w-none mx-auto">
       <div className="absolute inset-0 bg-emerald-50/60 rounded-full scale-90 lg:scale-105 pointer-events-none transition-transform group-hover:scale-110 duration-500" />
-      <div className="relative z-10 w-full aspect-square flex items-center justify-center p-2">
+      <motion.div
+        className="relative z-10 w-full aspect-square flex items-center justify-center p-2"
+        animate={{ y: [0, -12, 0] }}
+        transition={{ duration: 4, ease: "easeInOut", repeat: Infinity }}
+      >
         {image ? (
           <img
             src={image}
             alt={alt}
-            className="w-full h-auto object-contain max-h-[160px] sm:max-h-[240px] lg:max-h-[300px] pointer-events-none select-none"
+            className="w-full h-auto object-contain max-h-[220px] sm:max-h-[320px] lg:max-h-[400px] pointer-events-none select-none"
             draggable={false}
             onError={(e) => {
               e.target.style.display = "none";
@@ -338,9 +342,8 @@ function IllustrationColumn({ image, alt }) {
         ) : (
           <div className="w-full h-32 flex items-center justify-center text-gray-300 text-xs font-semibold"></div>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 }
-
 export default PricingSection;
