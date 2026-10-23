@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-import Navbar from ".././Navbar";
-import Footer from ".././Footer";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-import { services } from ".././MainServices";
-import ServiceBg from ".././ServiceBg.png"
+import { services } from "./MainServices";
+import ServiceBg from "./ServiceBg.png"
 
 export default function Services() {
   return (
