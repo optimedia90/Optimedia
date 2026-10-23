@@ -13,7 +13,7 @@ export default function Contact() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[320px] sm:h-[420px] md:h-[520px] lg:h-[600px] overflow-hidden">
+      <section className="relative w-full overflow-hidden bg-[#050865]">
 
       <motion.img
   src={ContactHeroImg}
