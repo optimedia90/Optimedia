@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ChevronDown, ArrowRight, Menu, X } from "lucide-react";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { services } from "../data/MainServices";
-import SidebarBg from "../assets/mobileHeroBgForServices.png";
+import { services } from "./MainServices";
+import SidebarBg from "./mobileHeroBgForServices.png";
 
 export default function Navbar() {
   const location = useLocation();
