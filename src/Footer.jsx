@@ -20,19 +20,44 @@ export default function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterMessage, setNewsletterMessage] = useState("");
 
-  const handleNewsletterSubmit = (event) => {
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (event) => {
     event.preventDefault();
-    const email = newsletterEmail.trim();
+    const email = newsletterEmail.trim().toLowerCase();
     if (!email) {
       setNewsletterMessage("Please enter your email address.");
       return;
     }
-    const subject = encodeURIComponent("Newsletter subscription request");
-    const body = encodeURIComponent(
-      `Please add this email address to the Optimedia Solutions newsletter: ${email}`
-    );
-    setNewsletterMessage("Your email app will open so you can send the subscription request.");
-    window.location.href = `mailto:optimediasolutions90@gmail.com?subject=${subject}&body=${body}`;
+
+    const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+    const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+    if (!supabaseUrl || !supabaseAnonKey) {
+      setNewsletterMessage("Newsletter signup is being set up. Please try again soon.");
+      return;
+    }
+
+    setNewsletterSubmitting(true);
+    setNewsletterMessage("");
+    try {
+      const response = await fetch(supabaseUrl.replace(/\/$/, "") + "/rest/v1/newsletter_subscribers", {
+        method: "POST",
+        headers: {
+          apikey: supabaseAnonKey,
+          Authorization: "Bearer " + supabaseAnonKey,
+          "Content-Type": "application/json",
+          Prefer: "resolution=ignore-duplicates,return=minimal",
+        },
+        body: JSON.stringify({ email }),
+      });
+      if (!response.ok) throw new Error("Newsletter signup request failed");
+      setNewsletterEmail("");
+      setNewsletterMessage("Thank you for subscribing!");
+    } catch (error) {
+      setNewsletterMessage("Sorry, we couldn't save your subscription. Please try again.");
+    } finally {
+      setNewsletterSubmitting(false);
+    }
   };
 
 
@@ -256,9 +281,10 @@ export default function Footer() {
               <button
                 type="submit"
                 aria-label="Subscribe to newsletter"
+                disabled={newsletterSubmitting}
                 className="w-9 h-9 rounded-xl bg-[#008751] text-white flex items-center justify-center hover:bg-[#001147] transition-colors duration-300 flex-shrink-0 cursor-pointer"
               >
-                <ArrowRight size={16} strokeWidth={2.5} />
+                {newsletterSubmitting ? <span className="text-xs font-semibold">...</span> : <ArrowRight size={16} strokeWidth={2.5} />}
               </button>
             </form>
             {newsletterMessage && (
