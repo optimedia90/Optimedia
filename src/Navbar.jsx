@@ -38,13 +38,18 @@ export default function Navbar() {
         <Link
   to="/"
   onClick={handleLogoClick}
-  className="flex-shrink-0"
+  aria-label="Optimedia Solutions home"
+  className="flex-shrink-0 inline-flex items-center gap-3"
 >
   <img
     src="/optimedia_logo.jpeg"
     alt="Optimedia Solutions"
     className="h-12 w-12 rounded-full object-cover"
   />
+  <span className="flex flex-col leading-tight">
+    <span className="text-[#001147] text-base sm:text-lg font-black tracking-tight uppercase">Optimedia</span>
+    <span className="text-[#008751] text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase">Solutions</span>
+  </span>
 </Link>
 
           {/* Desktop Navigation */}
