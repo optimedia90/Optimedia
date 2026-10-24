@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import { Mail, ArrowRight } from "lucide-react";
 import { Mail, ArrowRight, Phone, MapPin } from "lucide-react";
 
@@ -216,23 +216,37 @@ export default function Footer() {
             </p>
 
             {/* Layout Aligned Newsletter Searchbar Field */}
-            <form onSubmit={(e) => e.preventDefault()} className="flex items-center w-full bg-white border border-slate-200/90 rounded-2xl p-1.5 shadow-[0_5px_15px_rgba(0,0,0,0.01)] focus-within:border-[#008751] transition-all duration-300">
+            <form onSubmit={handleNewsletterSubmit} className="flex items-center w-full bg-white border border-slate-200/90 rounded-2xl p-1.5 shadow-[0_5px_15px_rgba(0,0,0,0.01)] focus-within:border-[#008751] transition-all duration-300">
               <div className="flex items-center gap-2 pl-3 flex-1 text-slate-400">
                 <Mail size={16} />
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
+                <input
+                  type="email"
+                  name="newsletterEmail"
+                  autoComplete="email"
+                  value={newsletterEmail}
+                  onChange={(event) => {
+                    setNewsletterEmail(event.target.value);
+                    setNewsletterMessage("");
+                  }}
+                  placeholder="Your email address"
+                  aria-label="Your email address"
                   className="w-full bg-transparent text-xs text-[#001147] font-medium outline-none placeholder:text-gray-400/90"
                   required
                 />
               </div>
-              <button 
+              <button
                 type="submit"
+                aria-label="Subscribe to newsletter"
                 className="w-9 h-9 rounded-xl bg-[#008751] text-white flex items-center justify-center hover:bg-[#001147] transition-colors duration-300 flex-shrink-0 cursor-pointer"
               >
                 <ArrowRight size={16} strokeWidth={2.5} />
               </button>
             </form>
+            {newsletterMessage && (
+              <p role="status" aria-live="polite" className="text-xs text-[#008751] mt-2">
+                {newsletterMessage}
+              </p>
+            )}
           </div>
 
         </div>
