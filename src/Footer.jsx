@@ -17,6 +17,25 @@ const YoutubeIcon = () => (
 );
 
 export default function Footer() {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterMessage, setNewsletterMessage] = useState("");
+
+  const handleNewsletterSubmit = (event) => {
+    event.preventDefault();
+    const email = newsletterEmail.trim();
+    if (!email) {
+      setNewsletterMessage("Please enter your email address.");
+      return;
+    }
+    const subject = encodeURIComponent("Newsletter subscription request");
+    const body = encodeURIComponent(
+      `Please add this email address to the Optimedia Solutions newsletter: ${email}`
+    );
+    setNewsletterMessage("Your email app will open so you can send the subscription request.");
+    window.location.href = `mailto:optimediasolutions90@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+
   const companyLinksCol1 = [
     { label: "Branding And Identity", href: "/services" },
     { label: "Social Media Marketing", href: "/services/social-media-marketing" },
