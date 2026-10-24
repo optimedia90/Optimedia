@@ -158,7 +158,7 @@ export default function TeamSection() {
   const visibleMembers = Array.from({ length: visibleCount }, (_, i) => teamMembers[(startIndex + i) % total]);
 
   return (
-    <section className="relative py-14 sm:py-20 md:py-24 bg-[#F4FBF7] overflow-hidden flex items-center">
+    <section id="team" className="relative py-14 sm:py-20 md:py-24 bg-[#F4FBF7] overflow-hidden flex items-center">
       {/* Background decorative dot grids */}
       <div className="absolute top-12 left-10 grid grid-cols-4 gap-1.5 opacity-20 select-none">
         {[...Array(16)].map((_, i) => (
