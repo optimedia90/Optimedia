@@ -18,18 +18,18 @@ const YoutubeIcon = () => (
 
 export default function Footer() {
   const companyLinksCol1 = [
-    "Branding And Identity",
-    "Social Media Marketing",
-    "Web Development",
-    "Pay-Per-Click",
-    "Content Marketing"
+    { label: "Branding And Identity", href: "/services" },
+    { label: "Social Media Marketing", href: "/services/social-media-marketing" },
+    { label: "Web Development", href: "/services/website-development" },
+    { label: "Pay-Per-Click", href: "/services/sem-services" },
+    { label: "Content Marketing", href: "/services/content-marketing" }
   ];
 
   const companyLinksCol2 = [
-    "About Company",
-    "Advice & Tips",
-    "Our Team",
-    "Our Partners"
+    { label: "About Company", href: "/about" },
+    { label: "Advice & Tips", href: "/blog" },
+    { label: "Our Team", href: "/about#team" },
+    { label: "Our Partners", href: "/contect" }
   ];
 
   return (
@@ -174,11 +174,11 @@ export default function Footer() {
               <ul className="space-y-3.5">
                 {companyLinksCol1.map((link, idx) => (
                   <li key={idx}>
-                    <a href="#" className="flex items-center gap-2.5 group text-gray-600 hover:text-[#001147] font-bold text-xs tracking-wide transition-colors duration-200">
+                    <a href={link.href} className="flex items-center gap-2.5 group text-gray-600 hover:text-[#001147] font-bold text-xs tracking-wide transition-colors duration-200">
                       <div className="w-4 h-4 rounded-full border border-emerald-200 flex items-center justify-center text-[#008751] group-hover:bg-[#008751] group-hover:text-white transition-all duration-200 flex-shrink-0 scale-95">
                         <svg className="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                       </div>
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -191,11 +191,11 @@ export default function Footer() {
               <ul className="space-y-3.5">
                 {companyLinksCol2.map((link, idx) => (
                   <li key={idx}>
-                    <a href="#" className="flex items-center gap-2.5 group text-gray-600 hover:text-[#001147] font-bold text-xs tracking-wide transition-colors duration-200">
+                    <a href={link.href} className="flex items-center gap-2.5 group text-gray-600 hover:text-[#001147] font-bold text-xs tracking-wide transition-colors duration-200">
                       <div className="w-4 h-4 rounded-full border border-emerald-200 flex items-center justify-center text-[#008751] group-hover:bg-[#008751] group-hover:text-white transition-all duration-200 flex-shrink-0 scale-95">
                         <svg className="w-2.5 h-2.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                       </div>
-                      {link}
+                      {link.label}
                     </a>
                   </li>
                 ))}
