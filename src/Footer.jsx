@@ -40,7 +40,7 @@ export default function Footer() {
     setNewsletterSubmitting(true);
     setNewsletterMessage("");
     try {
-      const response = await fetch(supabaseUrl.replace(/\/$/, "") + "/rest/v1/newsletter_subscribers", {
+      const response = await fetch(supabaseUrl.replace(/\/$/, "") + "/rest/v1/newsletter_subscribers?on_conflict=email", {
         method: "POST",
         headers: {
           apikey: supabaseAnonKey,
