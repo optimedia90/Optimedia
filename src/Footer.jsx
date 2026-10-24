@@ -121,7 +121,7 @@ export default function Footer() {
           
           {/* COLUMN 1: BRAND LOGO META INFRA (Takes 4 cols out of 12) */}
           <div className="lg:col-span-4 space-y-6">
-            <div className="flex items-center gap-3">
+            <a href="/" aria-label="Optimedia Solutions home" className="inline-flex items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#008751]">
               <div className="w-11 h-11 rounded-full overflow-hidden border border-slate-200/80 p-0.5 bg-white shadow-sm flex-shrink-0">
                 <img 
                   src="/optimedia_logo.jpeg" 
@@ -137,7 +137,7 @@ export default function Footer() {
                   Solutions
                 </span>
               </div>
-            </div>
+            </a>
 
             <p className="text-gray-500 text-[13.5px] leading-relaxed max-w-sm">
               We help businesses grow with creative branding, digital marketing and technology solutions that drive real results.
