@@ -16,7 +16,7 @@ export default function ProjectsSection() {
 
 
   return (
-    <section className="relative py-24 overflow-hidden bg-[#f0fdf4]"
+    <section id="projects" className="relative py-24 overflow-hidden bg-[#f0fdf4]"
     style={{ backgroundImage: `url(${BGImage})` }}
     >
 
